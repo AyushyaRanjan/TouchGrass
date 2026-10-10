@@ -1,0 +1,33 @@
+# Runtime data (sqlite + proof photos). Keep the empty folder via .gitkeep.
+data/*
+!data/.gitkeep
+
+.env
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+node_modules/
+
+eval/photos/*
+!eval/photos/.gitkeep
+spike/photos/*
+!spike/photos/.gitkeep
+
+app/.expo/
+.DS_Store
+Thumbs.db
+*.log
+
+# Signed builds and store credentials — never commit
+*.apk
+*.aab
+credentials.json
+google-services.json
+GoogleService-Info.plist

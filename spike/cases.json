@@ -1,0 +1,51 @@
+[
+  {
+    "file": "outdoor.jpeg",
+    "questions": [
+      { "q": "Was this photo taken outdoors?", "expected": "yes" },
+      { "q": "Is the photo taken indoors in a room?", "expected": "no" }
+    ]
+  },
+  {
+    "file": "outdoor1.jpeg",
+    "questions": [
+      { "q": "Was this photo taken outdoors?", "expected": "yes" },
+      { "q": "Is the photo taken indoors in a room?", "expected": "no" }
+    ]
+  },
+  {
+    "file": "pots1.jpeg",
+    "questions": [
+      { "q": "Are plant pots visible in the photo?", "expected": "yes" },
+      { "q": "Is there green grass visible in the photo?", "expected": "no" }
+    ]
+  },
+  {
+    "file": "pots2.jpeg",
+    "questions": [
+      { "q": "Are plant pots visible in the photo?", "expected": "yes" },
+      { "q": "Is there green grass visible in the photo?", "expected": "no" }
+    ]
+  },
+  {
+    "file": "randomindoorobject.jpeg",
+    "questions": [
+      { "q": "Was this photo taken indoors in a room?", "expected": "yes" },
+      { "q": "Was this photo taken outdoors in nature?", "expected": "no" }
+    ]
+  },
+  {
+    "file": "shoes.jpeg",
+    "questions": [
+      { "q": "Are shoes visible in the photo?", "expected": "yes" },
+      { "q": "Is the photo taken indoors in a room?", "expected": "no" }
+    ]
+  },
+  {
+    "file": "treeonscreen.jpeg",
+    "questions": [
+      { "q": "Is a screen or monitor displaying an image of a tree?", "expected": "yes" },
+      { "q": "Is a real tree seen directly outdoors, not on a screen?", "expected": "no" }
+    ]
+  }
+]

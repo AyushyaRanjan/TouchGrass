@@ -1,0 +1,30 @@
+[
+  {
+    "file": "normal.jpg",
+    "rubric": {
+      "criteria": [
+        { "id": "outdoors", "question": "Was this photo taken outdoors?", "required": true }
+      ]
+    },
+    "expected": "pass"
+  },
+  {
+    "file": "dark.jpg",
+    "rubric": {
+      "criteria": [
+        { "id": "outdoors", "question": "Was this photo taken outdoors?", "required": true }
+      ]
+    },
+    "expected": "retake"
+  },
+  {
+    "file": "normal.jpg",
+    "task_id": "task-duplicate",
+    "rubric": {
+      "criteria": [
+        { "id": "outdoors", "question": "Was this photo taken outdoors?", "required": true }
+      ]
+    },
+    "expected": "rejected"
+  }
+]

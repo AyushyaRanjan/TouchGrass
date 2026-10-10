@@ -1,0 +1,29 @@
+[project]
+name = "touchgrass"
+version = "0.1.0"
+description = "One daily outdoor task, proven with a live photo, verified by a local VLM."
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "httpx",
+    "pydantic",
+    "pydantic-settings",
+    "python-multipart",
+    "Pillow",
+    "imagehash",
+    "opencv-python-headless",
+    "numpy",
+    "pyyaml",
+    "pytest",
+    "pytest-asyncio",
+    "tzdata>=2026.5",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+pythonpath = ["."]

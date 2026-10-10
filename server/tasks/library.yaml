@@ -1,0 +1,541 @@
+# Touch Grass task library (AGENTS.md rule 6: hand-written, never LLM-generated).
+# Style guide: the 12 seed tasks below are the reference. Every task needs:
+#   id (unique slug), category, title, why, minutes, difficulty (1-3),
+#   proof_hint, needs_dry, comfort (1-3, social only),
+#   note_prompt (optional, social tasks), criteria (2-4, at least 2 required).
+# Criteria rules: one yes/no question about one concrete visual thing,
+# answerable from ONE photo, never a stranger's face, social = place/setting.
+# Safety: public places only, no night isolation, no alcohol, no minors,
+# nothing costing more than a small snack or drink.
+
+# --- nature (10) ---
+
+- id: nat_leaf_hunt
+  category: nature
+  title: "Find the most colorful leaf"
+  why: "Autumn colors last only a few weeks. Slow down and look closely."
+  minutes: 20
+  difficulty: 1
+  needs_dry: true
+  proof_hint: "One leaf held in your hand or lying on the ground, trees behind it."
+  criteria:
+    - {id: c1, q: "Is a single leaf clearly visible?", required: true}
+    - {id: c2, q: "Is the leaf yellow, orange, red or brown?", required: true}
+    - {id: c3, q: "Is the photo taken outdoors?", required: true}
+
+- id: nat_sit_under_tree
+  category: nature
+  title: "Sit under a tree for 5 minutes, phone away"
+  why: "Five quiet minutes is enough to notice what you usually walk past."
+  minutes: 15
+  difficulty: 1
+  needs_dry: true
+  proof_hint: "Photo looking up into the tree, taken when you leave."
+  criteria:
+    - {id: c1, q: "Is a tree trunk or tree canopy visible?", required: true}
+    - {id: c2, q: "Is the photo taken outdoors?", required: true}
+    - {id: c3, q: "Are branches or leaves visible overhead?", required: false}
+
+- id: nat_plant_care
+  category: nature
+  title: "Look after one plant: water it, prune it, or just check on it"
+  why: "Plants reward attention slowly."
+  minutes: 10
+  difficulty: 1
+  needs_dry: false
+  proof_hint: "The plant, with soil, pot or garden visible."
+  criteria:
+    - {id: c1, q: "Is a living plant visible?", required: true}
+    - {id: c2, q: "Is soil, a pot or a garden bed visible?", required: true}
+
+- id: nat_cloud_shapes
+  category: nature
+  title: "Find a cloud shape and photograph it"
+  why: "Clouds rearrange themselves within minutes. Look up before they go."
+  minutes: 15
+  difficulty: 1
+  needs_dry: true
+  proof_hint: "The cloud, with sky around it."
+  criteria:
+    - {id: c1, q: "Is a cloud visible in the sky?", required: true}
+    - {id: c2, q: "Is the photo taken outdoors?", required: true}
+    - {id: c3, q: "Is a good amount of sky visible?", required: false}
+
+- id: nat_flower_closeup
+  category: nature
+  title: "Photograph one flower up close"
+  why: "Flowers are the boldest thing growing within arm's reach."
+  minutes: 15
+  difficulty: 1
+  needs_dry: true
+  proof_hint: "One flower filling most of the frame."
+  criteria:
+    - {id: c1, q: "Is a flower clearly visible?", required: true}
+    - {id: c2, q: "Is the photo taken outdoors?", required: true}
+    - {id: c3, q: "Are petals or the center of the flower visible?", required: false}
+
+- id: nat_tree_bark
+  category: nature
+  title: "Touch a tree and photograph its bark up close"
+  why: "Every species has its own fingerprint in the bark."
+  minutes: 10
+  difficulty: 1
+  needs_dry: false
+  proof_hint: "Bark filling the frame, taken from arm's length."
+  criteria:
+    - {id: c1, q: "Is tree bark visible up close?", required: true}
+    - {id: c2, q: "Is the photo taken outdoors?", required: true}
+
+- id: nat_bird_watch
+  category: nature
+  title: "Watch one bird for two minutes and photograph it"
+  why: "Birds do everything in the open, if you stay still long enough."
+  minutes: 15
+  difficulty: 2
+  needs_dry: true
+  proof_hint: "The bird, on the ground, a branch or a wire."
+  criteria:
+    - {id: c1, q: "Is a bird visible in the photo?", required: true}
+    - {id: c2, q: "Is the photo taken outdoors?", required: true}
+
+- id: nat_water_spot
+  category: nature
+  title: "Find moving water: a stream, a fountain or falling rain"
+  why: "Moving water is the easiest calm you can find."
+  minutes: 25
+  difficulty: 2
+  needs_dry: false
+  proof_hint: "The water itself, close enough to see movement."
+  criteria:
+    - {id: c1, q: "Is water visible in the photo?", required: true}
+    - {id: c2, q: "Is the photo taken outdoors?", required: true}
+    - {id: c3, q: "Does the water look like it is moving or falling?", required: false}
+
+- id: nat_weed_crack
+  category: nature
+  title: "Photograph a plant growing where it should not be"
+  why: "Weeds are the stubbornest gardeners there are."
+  minutes: 10
+  difficulty: 1
+  needs_dry: false
+  proof_hint: "The plant in a pavement crack or wall, with the ground around it."
+  criteria:
+    - {id: c1, q: "Is a small plant growing out of a crack, wall or pavement?", required: true}
+    - {id: c2, q: "Is the photo taken outdoors?", required: true}
+    - {id: c3, q: "Is paving, concrete or stone visible around it?", required: false}
+
+- id: nat_sunset_sky
+  category: nature
+  title: "Watch the sky change color for 10 minutes around sunset"
+  why: "The best show of the day is free and happens once."
+  minutes: 20
+  difficulty: 1
+  needs_dry: true
+  proof_hint: "The sky with sunset colors, taken while there is still light out."
+  criteria:
+    - {id: c1, q: "Is the sky showing warm colors such as orange, pink or red?", required: true}
+    - {id: c2, q: "Is the photo taken outdoors?", required: true}
+    - {id: c3, q: "Is the sun low or below the horizon?", required: false}
+
+# --- movement (7) ---
+
+- id: mov_brisk_walk
+  category: movement
+  title: "10-minute brisk walk"
+  why: "A fast short walk beats a slow long scroll."
+  minutes: 15
+  difficulty: 1
+  needs_dry: false
+  proof_hint: "Your shoes on the path you walked."
+  criteria:
+    - {id: c1, q: "Are shoes or feet visible?", required: true}
+    - {id: c2, q: "Is the ground a path, pavement, road or grass?", required: true}
+    - {id: c3, q: "Is the photo taken outdoors?", required: true}
+
+- id: mov_stairs
+  category: movement
+  title: "Take the stairs instead of the lift, twice"
+  why: "Two flights beat waiting for a box with a number on it."
+  minutes: 10
+  difficulty: 1
+  needs_dry: false
+  proof_hint: "The staircase you climbed."
+  criteria:
+    - {id: c1, q: "Is a staircase or flight of steps visible?", required: true}
+    - {id: c2, q: "Are at least six steps visible?", required: true}
+    - {id: c3, q: "Is a handrail visible?", required: false}
+
+- id: mov_stretch_out
+  category: movement
+  title: "Do a five-minute stretch outside"
+  why: "Fresh air makes stiff joints easier to unpick."
+  minutes: 15
+  difficulty: 1
+  needs_dry: false
+  proof_hint: "The spot where you stretched: grass, a bench or open ground."
+  criteria:
+    - {id: c1, q: "Is the photo taken outdoors?", required: true}
+    - {id: c2, q: "Is a park, path, grass or open space visible?", required: true}
+    - {id: c3, q: "Is a bench visible?", required: false}
+
+- id: mov_bike_ride
+  category: movement
+  title: "Cycle somewhere you would normally walk"
+  why: "The same trip feels new at a different speed."
+  minutes: 30
+  difficulty: 2
+  needs_dry: false
+  proof_hint: "Your bike, with the road or path behind it."
+  criteria:
+    - {id: c1, q: "Is a bicycle visible?", required: true}
+    - {id: c2, q: "Is the photo taken outdoors?", required: true}
+    - {id: c3, q: "Is a road, path or track visible?", required: false}
+
+- id: mov_dance_one_song
+  category: movement
+  title: "Dance to one full song, phone away"
+  why: "One song of moving badly beats an hour of sitting well."
+  minutes: 5
+  difficulty: 1
+  needs_dry: false
+  proof_hint: "The floor or ground where you danced, with your shoes in the shot."
+  criteria:
+    - {id: c1, q: "Are shoes or feet visible?", required: true}
+    - {id: c2, q: "Is the ground a floor, pavement or grass?", required: true}
+
+- id: mov_play_ball
+  category: movement
+  title: "Kick or throw a ball against a wall for ten minutes"
+  why: "A wall never cancels and never keeps score."
+  minutes: 15
+  difficulty: 2
+  needs_dry: false
+  proof_hint: "The ball next to the wall you used."
+  criteria:
+    - {id: c1, q: "Is a ball visible?", required: true}
+    - {id: c2, q: "Is a wall, fence or hard surface behind it?", required: true}
+    - {id: c3, q: "Is the photo taken outdoors?", required: false}
+
+- id: mov_step_ups
+  category: movement
+  title: "Do ten step-ups on a curb or low step, each leg"
+  why: "Small repeated effort is the kind that actually happens."
+  minutes: 10
+  difficulty: 1
+  needs_dry: false
+  proof_hint: "Your shoes on the curb or step you used."
+  criteria:
+    - {id: c1, q: "Are shoes or feet visible?", required: true}
+    - {id: c2, q: "Is a curb, step or low platform visible?", required: true}
+
+# --- exploration (6) ---
+
+- id: exp_high_point
+  category: exploration
+  title: "Find the highest point near you and look out"
+  why: "Seeing your area from above changes how you see it."
+  minutes: 30
+  difficulty: 2
+  needs_dry: true
+  proof_hint: "The view from the highest spot you could safely reach."
+  criteria:
+    - {id: c1, q: "Is a wide view of buildings, trees, land or sky visible?", required: true}
+    - {id: c2, q: "Is the sky visible?", required: true}
+    - {id: c3, q: "Is the photo taken outdoors?", required: true}
+
+- id: exp_new_street
+  category: exploration
+  title: "Walk down a street you have never been on"
+  why: "Your neighborhood has streets you have never seen."
+  minutes: 25
+  difficulty: 1
+  needs_dry: false
+  proof_hint: "A photo down the street."
+  criteria:
+    - {id: c1, q: "Is a street or lane visible?", required: true}
+    - {id: c2, q: "Is the photo taken outdoors?", required: true}
+
+- id: exp_landmark_local
+  category: exploration
+  title: "Find the nearest landmark and see it in person"
+  why: "Every place has a thing everyone points at but few actually visit."
+  minutes: 30
+  difficulty: 2
+  needs_dry: false
+  proof_hint: "The landmark itself, from a spot where you can see it whole."
+  criteria:
+    - {id: c1, q: "Is a monument, statue, tower or prominent building visible?", required: true}
+    - {id: c2, q: "Is the photo taken outdoors?", required: true}
+    - {id: c3, q: "Is the sky visible?", required: false}
+
+- id: exp_street_sign
+  category: exploration
+  title: "Photograph a street sign you have never noticed"
+  why: "Street names are the oldest story your area tells."
+  minutes: 20
+  difficulty: 1
+  needs_dry: false
+  proof_hint: "The sign, readable, with the street around it."
+  criteria:
+    - {id: c1, q: "Is a street sign or name plate visible?", required: true}
+    - {id: c2, q: "Is the photo taken outdoors?", required: true}
+
+- id: exp_bridge
+  category: exploration
+  title: "Cross a bridge you have never crossed"
+  why: "The other side of the water is still your town."
+  minutes: 30
+  difficulty: 2
+  needs_dry: true
+  proof_hint: "The bridge itself, taken from the approach or the side."
+  criteria:
+    - {id: c1, q: "Is a bridge visible?", required: true}
+    - {id: c2, q: "Is the photo taken outdoors?", required: true}
+    - {id: c3, q: "Is water, a road or a path visible under or beyond it?", required: false}
+
+- id: exp_bench_new
+  category: exploration
+  title: "Sit on a bench you have never sat on"
+  why: "A different seat gives you a different view of the same street."
+  minutes: 15
+  difficulty: 1
+  needs_dry: false
+  proof_hint: "The bench itself, or the view from it."
+  criteria:
+    - {id: c1, q: "Is a bench visible?", required: true}
+    - {id: c2, q: "Is the photo taken outdoors?", required: true}
+    - {id: c3, q: "Is a street, park or body of water visible from the seat?", required: false}
+
+# --- social (8) ---
+# Place/setting criteria only. Never people. Never a stranger's face.
+
+- id: soc_small_hello
+  category: social
+  title: "Say 'good morning' (or hello) to three people you pass"
+  why: "Tiny greetings make a place feel like yours."
+  minutes: 20
+  difficulty: 1
+  comfort: 1
+  needs_dry: false
+  note_prompt: "How did it feel? One line."
+  proof_hint: "A photo of the street or park where you did it. No people needed."
+  criteria:
+    - {id: c1, q: "Is this a street, path, park or other public outdoor place?", required: true}
+    - {id: c2, q: "Is the photo taken outdoors?", required: true}
+
+- id: soc_ask_recommendation
+  category: social
+  title: "Ask someone for their favorite local food or drink spot, then go"
+  why: "Locals know things no app does."
+  minutes: 45
+  difficulty: 2
+  comfort: 2
+  needs_dry: false
+  note_prompt: "What did they recommend?"
+  proof_hint: "Photo of the place or what you ordered."
+  criteria:
+    - {id: c1, q: "Is food or a drink visible, or is this a cafe, stall or restaurant?", required: true}
+    - {id: c2, q: "Is this a public place such as a cafe, stall, market or restaurant?", required: true}
+
+- id: soc_thank_server
+  category: social
+  title: "Buy a small drink or snack and ask the person serving how their day is going"
+  why: "A real question turns a transaction into a moment."
+  minutes: 20
+  difficulty: 1
+  comfort: 1
+  needs_dry: false
+  note_prompt: "What did they say?"
+  proof_hint: "Your drink or snack, with the shop or stall around it."
+  criteria:
+    - {id: c1, q: "Is a drink or snack visible?", required: true}
+    - {id: c2, q: "Does the background look like a shop, cafe, stall or market?", required: true}
+
+- id: soc_cafe_new
+  category: social
+  title: "Try a cafe or tea shop you have never been to"
+  why: "A new table in a new room changes the whole break."
+  minutes: 40
+  difficulty: 2
+  comfort: 2
+  needs_dry: false
+  note_prompt: "What did you order, and would you go back?"
+  proof_hint: "Your drink or snack with the cafe around it. No people needed."
+  criteria:
+    - {id: c1, q: "Is a drink or food visible?", required: true}
+    - {id: c2, q: "Does the background look like a cafe, bakery or tea shop?", required: true}
+    - {id: c3, q: "Is a table, counter or window seat visible?", required: false}
+
+- id: soc_market_chat
+  category: social
+  title: "Ask a market stall worker what is freshest today"
+  why: "The person behind the stall knows what is good right now."
+  minutes: 30
+  difficulty: 2
+  comfort: 2
+  needs_dry: false
+  note_prompt: "What did they say was freshest?"
+  proof_hint: "The stall or its produce. No people needed."
+  criteria:
+    - {id: c1, q: "Is a market stall or produce stand visible?", required: true}
+    - {id: c2, q: "Is fresh food, fruit or vegetables visible?", required: true}
+    - {id: c3, q: "Is this an open-air or covered market?", required: false}
+
+- id: soc_library_visit
+  category: social
+  title: "Visit the library and pick up something to read"
+  why: "Libraries are the last free shop in most towns."
+  minutes: 30
+  difficulty: 1
+  comfort: 1
+  needs_dry: false
+  note_prompt: "What did you find?"
+  proof_hint: "The book or magazine, with shelves behind it."
+  criteria:
+    - {id: c1, q: "Are books or shelves visible?", required: true}
+    - {id: c2, q: "Does the background look like a library?", required: true}
+
+- id: soc_park_hello
+  category: social
+  title: "Sit on a park bench for ten minutes and say hi to whoever comes by"
+  why: "A bench is the cheapest place to be around other people."
+  minutes: 20
+  difficulty: 2
+  comfort: 2
+  needs_dry: false
+  note_prompt: "Did anyone say hi back?"
+  proof_hint: "The bench or the park around it. No people needed."
+  criteria:
+    - {id: c1, q: "Is a park bench visible?", required: true}
+    - {id: c2, q: "Is the photo taken outdoors?", required: true}
+    - {id: c3, q: "Are trees or grass visible?", required: false}
+
+- id: soc_shop_question
+  category: social
+  title: "Ask the owner of a local shop how long they have been open"
+  why: "Every shop has a story the owner is happy to tell."
+  minutes: 30
+  difficulty: 2
+  comfort: 2
+  needs_dry: false
+  note_prompt: "How long have they been open?"
+  proof_hint: "Inside the shop or its window display. No people needed."
+  criteria:
+    - {id: c1, q: "Does the background look like a shop interior or shop window?", required: true}
+    - {id: c2, q: "Are products, shelves or a counter visible?", required: true}
+
+# --- creative (5) ---
+
+- id: cre_sketch_small
+  category: creative
+  title: "Sketch something small you usually walk past"
+  why: "Drawing forces you to look."
+  minutes: 25
+  difficulty: 2
+  needs_dry: false
+  proof_hint: "Your sketch next to the thing you drew."
+  criteria:
+    - {id: c1, q: "Is a sketch or drawing on paper visible?", required: true}
+    - {id: c2, q: "Is the photo taken outdoors?", required: true}
+
+- id: cre_cloud_doodle
+  category: creative
+  title: "Doodle the creature you saw in a cloud"
+  why: "Drawing keeps the shape in your head longer than a photo does."
+  minutes: 15
+  difficulty: 1
+  needs_dry: true
+  proof_hint: "Your doodle, with the sky or the cloud behind it if it is still there."
+  criteria:
+    - {id: c1, q: "Is a sketch or doodle on paper visible?", required: true}
+    - {id: c2, q: "Is the photo taken outdoors?", required: true}
+
+- id: cre_found_art
+  category: creative
+  title: "Arrange leaves, stones or petals into a small picture on the ground"
+  why: "Ten found objects become art in two minutes."
+  minutes: 20
+  difficulty: 2
+  needs_dry: true
+  proof_hint: "The arrangement from above, on the ground."
+  criteria:
+    - {id: c1, q: "Are leaves, stones, petals or sticks arranged together?", required: true}
+    - {id: c2, q: "Is the photo taken outdoors?", required: true}
+    - {id: c3, q: "Is soil, paving or grass visible around the arrangement?", required: false}
+
+- id: cre_haiku
+  category: creative
+  title: "Write a three-line poem about what is outside your window"
+  why: "Three lines is short enough that you will actually do it."
+  minutes: 15
+  difficulty: 1
+  needs_dry: false
+  proof_hint: "Your handwriting on paper, exactly as you wrote it."
+  criteria:
+    - {id: c1, q: "Is handwriting on paper visible?", required: true}
+    - {id: c2, q: "Is the writing arranged in at least three separate lines?", required: true}
+    - {id: c3, q: "Is a pen, pencil or marker visible?", required: false}
+
+- id: cre_paper_plane
+  category: creative
+  title: "Fold a paper plane and fly it outside"
+  why: "Ten folds and one throw buys ten minutes of being ten."
+  minutes: 20
+  difficulty: 1
+  needs_dry: false
+  proof_hint: "The plane in your hand or on the ground after it landed."
+  criteria:
+    - {id: c1, q: "Is a folded paper plane visible?", required: true}
+    - {id: c2, q: "Is the photo taken outdoors?", required: true}
+
+# --- community (4) ---
+
+- id: com_litter_ten
+  category: community
+  title: "Pick up 10 pieces of litter and bin them"
+  why: "Leave a place a little better than you found it."
+  minutes: 20
+  difficulty: 2
+  needs_dry: true
+  proof_hint: "The litter you collected, in a bag or next to a bin. Wear gloves."
+  criteria:
+    - {id: c1, q: "Is litter, rubbish or a bag of rubbish visible?", required: true}
+    - {id: c2, q: "Is the photo taken outdoors?", required: true}
+    - {id: c3, q: "Is a bin visible?", required: false}
+
+- id: com_new_shop
+  category: community
+  title: "Visit a local shop or market stall you have never been to and buy one small thing"
+  why: "Small local businesses survive on exactly this."
+  minutes: 30
+  difficulty: 1
+  needs_dry: false
+  proof_hint: "The item you bought, with the shop or stall behind it."
+  criteria:
+    - {id: c1, q: "Does the background look like a shop, market or stall?", required: true}
+    - {id: c2, q: "Is a small product or item visible?", required: true}
+
+- id: com_report_broken
+  category: community
+  title: "Photograph something broken on your street and report it"
+  why: "Reporting takes two minutes and is how things actually get fixed."
+  minutes: 15
+  difficulty: 1
+  needs_dry: false
+  proof_hint: "The broken thing: a bench, light, sign or pothole, clearly in frame."
+  criteria:
+    - {id: c1, q: "Is a damaged or broken object visible?", required: true}
+    - {id: c2, q: "Is the photo taken outdoors?", required: true}
+    - {id: c3, q: "Is this a street, path or public space?", required: false}
+
+- id: com_notice_board
+  category: community
+  title: "Read your local community notice board and find one event"
+  why: "The notice board is the original local network."
+  minutes: 15
+  difficulty: 1
+  needs_dry: false
+  proof_hint: "The notice board or a poster on it."
+  criteria:
+    - {id: c1, q: "Is a notice board or community poster visible?", required: true}
+    - {id: c2, q: "Are several notices or flyers visible together?", required: true}
